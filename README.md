@@ -3,14 +3,17 @@ Today Ill be demonstrating the setup for Windows Server 2022 and Active Director
 
 
 
-<h2>Windows Server 2022 Installation In VM VirtualBOX Manager</h2>
+<h2>Windows Server 2022 Installation In Proxmox VM Environment</h2>
 
- 1. Download Oracle VM VirtualBox Manager.
- 2. Download an evaluation copy of Windows Server 2022 from Microsoft's website.
- 3. Once installed, open program.
- 4. Create a new virtual machine.
- 5. Select the Windows Server ISO file and flag "Skip Unattended Installation"
-    - This will allow user to install the Desktop Experience Version of the OS. If not, the unattended installation will install the server core OS which runs exclusively in the Windows CLI, unless there is a script provided to specify the correct evaluation copy.
+ 1. Download an evaluation copy of Windows Server 2022 from Microsoft's website.
+ 2. We have to upload our ISO into our Proxmox VM Environment to do this we have to locate our local storage
+ 3. After you located the local storage on you Proxmox VM Enironment select the section "ISO Images" in this section this is where we are going to upload our Windows Server 2022 ISO 
+ 5. Once it is uploaded we can start to create a new virtual machine, we do this by clicking on "Create VM" located on the top right corner of the screen
+ 6. Under Gerneal tab name your VM, it can be anything you want.
+ 7. Under the OS, On the ISO image tab we are going to select our ISO that we just uploaded into our Proxmox, we want to change the type of OS we have from linux to Windows, and make sure we the lastest version selected.
+ 8. Under System the only thing you want to change under "SCSI Controller" from "VirtIO SCSI single" to "VirtIO SCSI"
+ 9. Under Disks, all we want to change is "Bus/Device" from "IDE" to "SCSI"
+    - In the other sections it really depends on your computer so adjusted as you want
 
 <img src="https://i.imgur.com/SJaHKyY.png" height="60%" width="60%" alt="VM Setup 1"/>
 
