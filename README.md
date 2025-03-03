@@ -15,7 +15,7 @@ Today Ill be demonstrating the setup for Windows Server 2022 and Active Director
  9. Under Disks, all we want to change is "Bus/Device" from "IDE" to "SCSI"
     - In the other sections it depends on your computer so adjust as you need, If necessary, there are plenty of YouTube videos out there that go through the installation process in-depth
 
-<img src="https://i.imgur.com/SJaHKyY.png" height="60%" width="60%" alt="VM Setup 1"/>
+image 
 
  7. Once setup is complete, open the VM.
  8. Click next on the first prompt and press "Install now".
