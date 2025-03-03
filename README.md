@@ -7,17 +7,16 @@ Today Ill be demonstrating the setup for Windows Server 2022 and Active Director
 
  1. Download an evaluation copy of Windows Server 2022 from Microsoft's website.
  2. We have to upload our ISO into our Proxmox VM Environment to do this we have to locate our local storage
- 3. After you located the local storage on you Proxmox VM Enironment select the section "ISO Images" in this section this is where we are going to upload our Windows Server 2022 ISO 
- 5. Once it is uploaded we can start to create a new virtual machine, we do this by clicking on "Create VM" located on the top right corner of the screen
- 6. Under Gerneal tab name your VM, it can be anything you want.
- 7. Under the OS, On the ISO image tab we are going to select our ISO that we just uploaded into our Proxmox, we want to change the type of OS we have from linux to Windows, and make sure we the lastest version selected.
+ 3. After you located the local storage on your Proxmox VM Environment select the section "ISO Images" In this section this is where we are going to upload our Windows Server 2022 ISO 
+ 5. Once it is uploaded we can start to create a new virtual machine, we do this by clicking on "Create VM" located in the top right corner of the screen
+ 6. Under the General tab name your VM, it can be anything you want.
+ 7. Under the OS, On the ISO image tab we are going to select the ISO that we just uploaded into our Proxmox, we want to change the type of OS we have from Linux to Windows and make sure we have the lastest version selected.
  8. Under System the only thing you want to change under "SCSI Controller" from "VirtIO SCSI single" to "VirtIO SCSI"
  9. Under Disks, all we want to change is "Bus/Device" from "IDE" to "SCSI"
-    - In the other sections it really depends on your computer so adjusted as you want
+    - In the other sections it depends on your computer so adjust as you need, If necessary, there are plenty of YouTube videos out there that go through the installation process in-depth
 
 <img src="https://i.imgur.com/SJaHKyY.png" height="60%" width="60%" alt="VM Setup 1"/>
 
- 6. Run through the entire setup process to complete the Virtual Machine set up. If necessary, there are plenty of YouTube videos out there that go through the installation process in-depth.
  7. Once setup is complete, open the VM.
  8. Click next on the first prompt and press "Install now".
 
