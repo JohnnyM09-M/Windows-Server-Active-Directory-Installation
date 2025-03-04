@@ -118,4 +118,4 @@ Now, I am going to install AD DS onto my server, change my server from a Workgro
 
 <img src="https://i.imgur.com/CCwCKyC.png" height="60%" width="60%" alt="Post Configuration">
 
-<h4> There you have it! We have installed Windows Server 2022 OS into a virtual machine and successfully set up Active Directory. There will be a deeper dive into the organization units and group policy realm in the next lab. That will be documented in a separate portfolio item! If there is anything I can improve on, please let me know. I am always open to feedback. Thank you!!!!</h4>
+<h4> There you have it! We have installed Windows Server 2022 OS into a virtual machine and successfully set up Active Directory. There will be a deeper dive into the organization units and group policy realm in my next portfolio entire. If there is anything I can improve on, please let me know. I am always open to feedback. Thank you!!!!</h4>
