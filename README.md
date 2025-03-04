@@ -40,12 +40,12 @@ image
 
 A workgroup is a logical network more suited for the home environment. Each device is independently configured to a sole user and cannot be seamlessly transferred from one device to the next. Each device's only connection in the workgroup is the network they are all connected to. This is ideal for the home environment where the family has individual devices such as computers that are uniquely configured to a different person in that household.
 
-A domain is a logical network that is suited for companies that have plenty of employees onboard. This allows admins who maintain the domain controller to register users and computers to the server. Once a user has their login credentials and permissions set, they will be able to log into any computer within that domain that is within their privilege to log in to. Those users and computers can then be further organized into organizational units(OU). For example, there can be an OU for different offices named "California" and "Nevada". Within those OUs can be sub-OUs for the Finance team and the Sales team for both California and Washington respectively and so on. I can then apply group policies to these OUs and set them up in a way where the Sales team only has access to Sales data and the Finance team can only access Finance data. 
+A domain is a logical network that is suited for companies that have plenty of employees onboard. This allows admins who maintain the domain controller to register users and computers to the server. Once a user has their login credentials and permissions set, they will be able to log into any computer within that domain that is within their privilege to log in to. Those users and computers can then be further organized into organizational units(OU). For example, there can be an OU for different offices named "California" and "Nevada". Within those OUs there can be sub-OUs for the Finance and Sales teams for California and Washington respectively and so on. I can then apply group policies to these OUs and set them up in a way where the Sales team only has access to Sales data and the Finance team can only access Finance data. 
 This is a very broad description of what a domain is as what an admin can do within a domain it can be very complex. Domains essentially give admins an easier time when trying to organize users and devices for large companies.
 
 <h3>Server Preparation</h3>
 
-To quickly brief, a domain controller is essentially the domain. Furthermore can be/are servers. These terms may be used synonymously within this demo and in the real world as well.
+A domain controller is essentially the domain. Furthermore can be/are servers. These terms may be used synonymously within this demo and in the real world as well.
 
 <h4>First things first. Set a Computer Name!</h4>
 
@@ -66,7 +66,7 @@ This is important because computers come with a default name that may not be too
 <h4>Next. IP and DNS Setup!</h4>
 
 Since this domain is the server that my company is going to use for Active Directory Domain Services (AD DS), I will need to set a static IP address and a preferred DNS address. The reason why we have to set up the DNS address is because AD DS utilizes DNS to perform various functions such as authentication. When we download the DNS role/tools onto the server, plenty of records will be written to the server for the server's DNS functions.
-To set this up, follow these steps:
+To set this up, begin by following these steps:
 
 1. Navigate to the Control Panel.
 2. Press Network and Internet.
@@ -94,28 +94,28 @@ Now, I am going to install AD DS onto my server, change my server from a Workgro
 
 <img src="https://i.imgur.com/5k1qfVL.png" height="60%" width="60%" alt="Server Manager Roles and Features">
 
-4. The Before you begin tab is an informative tab that explains the Add Roles and Features Wizard. Click Next.
-5. The Installation Type tab will allow me to select the type of installation I want. Since, this will be the first domain for my company, I will be choosing a role-based installation.
-6. The Server Selection tab will let me choose my server to install roles and features to. I highlighted my computer and hit next.
-7. The Server Roles tab shows all the roles you can install to the server. I will flag the Active Directory Domain Services option. Flagging the role will action a pop-up that will show me all the required features/tools that will be install with AD DS. Press add features and next.
-8. I am ignoring the Features tab for now since I am solely demonstrating Active Directory. Press next.
-9. An AD DS tab will pop up to show best practice information. Press next.
-10. The Confirmation tab will show the roles and features that will be installed. Press install to begin the installation. and let the process finish. I will have to restart my VM once installation is complete.
-11. Once my system was booted up, it is not time to promote the server to a domain controller. Previously it was set as a workgroup. There is a task within my notifications that will display a wizard to help me set this up.
+4. Before you begin tab is an informative tab that explains the Add Roles and Features Wizard. Click Next.
+5. Under the "Installation Type" tab will allow me to select the type of installation I want. Since this will be the first domain for my company, I will be choosing a role-based installation.
+6. Under the "Server Selection" tab will let me choose my server to install roles and features to. I highlighted my computer and hit next.
+7. Under the "Server Roles" tab shows all the roles you can install to the server. I will flag the Active Directory Domain Services option. Flagging the role will action a pop-up that will show me all the required features/tools that will be installed with AD DS. Press add features and next.
+8. I will be ignoring the "Features tab" for now since I am solely demonstrating Active Directory.
+9. An AD DS tab will pop up to show best practice information.
+10. The Confirmation tab will show the roles and features that will be installed. Press Install to begin the installation. and let the process finish. I will have to restart my VM once the installation is complete.
+11. Once my system is booted up, it is now time to promote the server to a domain controller. Previously it was set as a workgroup. There is a task within my notifications that will display a wizard to help me set this up.
 
 <img src="https://i.imgur.com/MnBYycM.png" height="60%" width="60%" alt="Post-Deploy Config">
 
-12. Now that the Deployment Configuration is displayed, I am going to flag the option to addd a new forest. This will allow me to set up a our domain controller in a new domain.  There are two other options:
-- Add a domain controller to an existing domain. This will make the forest fault tolerant.
+12. Now that the Deployment Configuration is displayed, I am going to flag the option to add a new forest. This will allow me to set up our domain controller in a new domain.  There are two other options:
+- Add a domain controller to an existing domain. This will make the forest fault-tolerant.
 - Add a new domain to an existing forest.
-- Note: both these options were not chosen due to the fact that I am setting everything up from scratch. Ground zero!
-13. I am now able to name the Root Domain. For this, I coined the name to be rock.local.
+- Note: both these options were not chosen since I am setting everything up from scratch.
+13. I am now able to name the Root Domain. For this, I coined the name "johnny.local".
 
 <img src="https://i.imgur.com/JX54PKZ.png" height="60%" width="60%" alt="Deployment Configuration">
 
-14. I pretty much keep everything default tabbing through the different sections. Everything was kept to default cause I did not need to change anything besides setting a DSRM password and a NetBIOS domain name(ROCK). A DSRM password is what is used to log into the Restore Mode in case the need for emergency fixes such as some system malfunction and needing to restore for a backup.
-15. Once again, the system will reboot. I am now up and running. We now have the AD DS role as well as my local server now says "Domain: rock.local" instead of "Workgroup: workgroup".
+14. I pretty much keeping everything default tabbing through the different sections. Everything was kept to default cause I did not need to change anything besides setting a DSRM password and a NetBIOS domain name(JOHNNY). A DSRM password is what is used to log into the Restore Mode in case needed for emergency fixes such as some system malfunction and needing to restore for a backup.
+15. Once again, the system will reboot. I am now up and running. We now have the AD DS role as well as my local server as Domain: "Johnny.local" instead of "Workgroup: workgroup".
 
 <img src="https://i.imgur.com/CCwCKyC.png" height="60%" width="60%" alt="Post Configuration">
 
-<h4>And there you have it! We have installed Windows Server 2022 OS into a virtual machine and successfully set up Active Directory. I will be cutting this section of the Active Directory lab short. I will dive deeper into the organization units and group policy realm in the next lab. That will be documented in a separate portfolio item! If there is anything I can improve on, please let me know. I am always open to feedback. Thank you!!!!</h4>
+<h4> There you have it! We have installed Windows Server 2022 OS into a virtual machine and successfully set up Active Directory. There will be a deeper dive into the organization units and group policy realm in the next lab. That will be documented in a separate portfolio item! If there is anything I can improve on, please let me know. I am always open to feedback. Thank you!!!!</h4>
