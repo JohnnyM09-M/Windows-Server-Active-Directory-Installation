@@ -94,7 +94,7 @@ Now, I am going to install AD DS onto my server, change my server from a Workgro
 
 <img src="https://i.imgur.com/5k1qfVL.png" height="60%" width="60%" alt="Server Manager Roles and Features">
 
-4. Before you begin tab is an informative tab that explains the Add Roles and Features Wizard. Click Next.
+4. Before we begin tab is an informative tab that explains the Add Roles and Features Wizard. Click Next.
 5. Under the "Installation Type" tab will allow me to select the type of installation I want. Since this will be the first domain for my company, I will be choosing a role-based installation.
 6. Under the "Server Selection" tab will let me choose my server to install roles and features to. I highlighted my computer and hit next.
 7. Under the "Server Roles" tab shows all the roles you can install to the server. I will flag the Active Directory Domain Services option. Flagging the role will action a pop-up that will show me all the required features/tools that will be installed with AD DS. Press add features and next.
@@ -109,11 +109,11 @@ Now, I am going to install AD DS onto my server, change my server from a Workgro
 - Add a domain controller to an existing domain. This will make the forest fault-tolerant.
 - Add a new domain to an existing forest.
 - Note: both these options were not chosen since I am setting everything up from scratch.
-13. I am now able to name the Root Domain. For this, I coined the name "johnny.local".
+13. I am now able to name the Root Domain. For this, I named it "johnny.local".
 
 <img src="https://i.imgur.com/JX54PKZ.png" height="60%" width="60%" alt="Deployment Configuration">
 
-14. I pretty much keeping everything default tabbing through the different sections. Everything was kept to default cause I did not need to change anything besides setting a DSRM password and a NetBIOS domain name(JOHNNY). A DSRM password is what is used to log into the Restore Mode in case needed for emergency fixes such as some system malfunction and needing to restore for a backup.
+14. I pretty much keeping everything default tabbing through the different sections. Everything was kept to default cause I did not need to change anything besides setting a DSRM password and a NetBIOS domain name (JOHNNY). A DSRM password is what is used to log into the Restore Mode in case needed for emergency fixes such as some system malfunction and needing to restore for a backup.
 15. Once again, the system will reboot. I am now up and running. We now have the AD DS role as well as my local server as Domain: "Johnny.local" instead of "Workgroup: workgroup".
 
 <img src="https://i.imgur.com/CCwCKyC.png" height="60%" width="60%" alt="Post Configuration">
