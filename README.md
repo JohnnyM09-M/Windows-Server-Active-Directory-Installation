@@ -17,7 +17,7 @@ Today I'll be demonstrating the setup for Windows Server 2022 and Active Directo
 
 image 
 
- 7. Once setup is complete, open the VM.
+ 7. Once setup is complete, open the VM. You can do this by going to the console section in your new VM and clicking on "start" or on the top right of the screen you can see a button that says "start" right below the "documentation".
  8. Click next on the first prompt and press "Install now".
 
 <img src="https://i.imgur.com/CfP8Y7V.png" height="60%" width="60%" alt="OS Installation 1"/>
@@ -30,7 +30,7 @@ image
 
 <img src="https://i.imgur.com/w91rO9I.png" height="60%" width="60%" alt="OS Installation 3">
 
- 11. Press Ctrl+Alt+Del to unlock the OS. In Proxmox, 
+ 11. Press Ctrl+Alt+Del to unlock the OS. In Proxmox, you will have to go through a separate tab to press Ctrl+Alt+Del as shown in the picture below. 
  12. Sign in and Server Manager should automatically open. If it doesn't, open the start menu and search for Server Manager. Click the first app that appears.
 
 <img src="https://i.imgur.com/8wlMQcL.png" height="60%" width="60%" alt="OS Installation 3">
